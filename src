@@ -1,0 +1,51 @@
+/* BORDELINES - generative design poster
+designer: Mino Parisi
+www.minoparisi.com
+http://www.behance.net/minoparisi
+
+You can run the generative sketch made in 
+Processing and when you want to save the image
+that you like by pressing any key on your keyboard.
+
+This project is under CC - Attribution-NonCommercial-NoDerivs 3.0 */
+
+float r;
+float b;
+float g;
+float a;
+float x1;
+float y1;
+float x2;
+float y2;
+float slide;
+
+void setup() { 
+ background(255);
+ size(600,800);
+ smooth();
+ noCursor();
+}
+
+void draw() {
+  
+  x1 = random(width);
+  y1 = random(height);
+  x2 = random(width/2);
+  y2 = random(height/2);
+  
+  r = random(255);
+  g = random(255);
+  b = random(255);
+  a = random(255);
+  slide = int(random(600));
+  
+  stroke(r,g,b,a);
+  
+  line(slide,0,x1,y1);
+  line(slide,800,x2,y2);
+}
+
+void keyPressed() {
+  saveFrame("poster_.png");
+ }
+
